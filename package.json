@@ -1,0 +1,17 @@
+{
+  "name": "ecommercearqsoft",
+  "version": "1.0.0",
+  "description": "This is a college subject for software architecture. The proposal is to make a prototype of an ecommerce with the MVC architecture",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Henrique Machado Algauer & Gabriel Santos",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^5.21.1",
+    "dotenv": "^16.4.5",
+    "fastify": "^5.0.0",
+    "prisma": "^5.21.1"
+  }
+}
