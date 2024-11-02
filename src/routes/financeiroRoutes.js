@@ -3,4 +3,4 @@ async function financeiroRoutes(fastify, options) {
     fastify.post('/financeiro/debito', fastify.controllers.financeiro.cadastrarDebito);
 }
 
-module.exports = financeiroRoutes;
+export default financeiroRoutes;

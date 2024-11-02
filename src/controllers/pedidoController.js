@@ -1,4 +1,4 @@
-exports.criarPedido = async (req, reply) => {
+export async function criarPedido(req, reply) {
     const { idCliente, itens } = req.body;
     try {
         // Calcula o valor total do pedido
@@ -53,6 +53,6 @@ exports.criarPedido = async (req, reply) => {
     } catch (error) {
         reply.status(500).send(error);
     }
-};
+}
 
 // Outros métodos como listarPedidos, obterPedidoPorId etc.

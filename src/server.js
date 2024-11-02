@@ -16,10 +16,10 @@ fastify.decorate('controllers', {
 });
 
 // Registrar rotas
-fastify.register(require('./routes/usuarioRoutes'));
-fastify.register(require('./routes/produtoRoutes'));
-fastify.register(require('./routes/pedidoRoutes'));
-fastify.register(require('./routes/financeiroRoutes'));
+fastify.register(require('./routes/usuarioRoutes').default);
+fastify.register(require('./routes/produtoRoutes').default);
+fastify.register(require('./routes/pedidoRoutes').default);
+fastify.register(require('./routes/financeiroRoutes').default);
 
 // ...
 
@@ -30,16 +30,16 @@ const prismaClient = new prisma.PrismaClient();
 fastify.decorate('prisma', prismaClient);
 
 // Registrar rotas
-fastify.register(require('./routes/usuarioRoutes'));
-fastify.register(require('./routes/produtoRoutes'));
-fastify.register(require('./routes/pedidoRoutes'));
-fastify.register(require('./routes/financeiroRoutes'));
+fastify.register(require('./routes/usuarioRoutes').default);
+fastify.register(require('./routes/produtoRoutes').default);
+fastify.register(require('./routes/pedidoRoutes').default);
+fastify.register(require('./routes/financeiroRoutes').default);
 
 
 // Outros imports e configurações...
 
 // Registrar rotas
-fastify.register(require('./routes/usuarioRoutes'));
+fastify.register(require('./routes/usuarioRoutes').default);
 // Registrar outras rotas...
 
 // Iniciar o servidor

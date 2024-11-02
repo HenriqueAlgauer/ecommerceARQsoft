@@ -1,4 +1,4 @@
-exports.criarProduto = async (req, reply) => {
+export async function criarProduto(req, reply) {
     const { nome, descricao, sku, valor, estoque, ativo } = req.body;
     try {
         const produto = await req.server.prisma.produto.create({
@@ -8,15 +8,15 @@ exports.criarProduto = async (req, reply) => {
     } catch (error) {
         reply.status(500).send(error);
     }
-};
+}
 
-exports.listarProdutos = async (req, reply) => {
+export async function listarProdutos(req, reply) {
     try {
         const produtos = await req.server.prisma.produto.findMany();
         reply.send(produtos);
     } catch (error) {
         reply.status(500).send(error);
     }
-};
+}
 
 // Outros métodos como atualizarProduto, deletarProduto etc.

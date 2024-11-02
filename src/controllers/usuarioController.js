@@ -1,22 +1,20 @@
-exports.criarUsuario = async (req, reply) => {
-    const { nome, email, senha, tel } = req.body;
+export async function criarUsuario(request, reply) {
+    const { nome, email, senha, tel } = request.body;
     try {
-        const usuario = await req.server.prisma.usuario.create({
+        const usuario = await request.server.prisma.usuario.create({
             data: { nome, email, senha, tel },
         });
         reply.send(usuario);
     } catch (error) {
         reply.status(500).send(error);
     }
-};
+}
 
-exports.listarUsuarios = async (req, reply) => {
+export async function listarUsuarios(request, reply) {
     try {
-        const usuarios = await req.server.prisma.usuario.findMany();
+        const usuarios = await request.server.prisma.usuario.findMany();
         reply.send(usuarios);
     } catch (error) {
         reply.status(500).send(error);
     }
-};
-
-// Outros métodos como atualizarUsuario, deletarUsuario etc.
+}

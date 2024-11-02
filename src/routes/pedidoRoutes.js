@@ -3,4 +3,4 @@ async function pedidoRoutes(fastify, options) {
     // Outras rotas: GET /pedidos, GET /pedidos/:id
 }
 
-module.exports = pedidoRoutes;
+export default pedidoRoutes;

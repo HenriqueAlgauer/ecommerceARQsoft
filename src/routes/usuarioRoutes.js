@@ -4,4 +4,4 @@ async function usuarioRoutes(fastify, options) {
     // Outras rotas: GET /usuarios/:id, PUT /usuarios/:id, DELETE /usuarios/:id
 }
 
-module.exports = usuarioRoutes;
+export default usuarioRoutes;

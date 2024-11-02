@@ -4,4 +4,4 @@ async function produtoRoutes(fastify, options) {
     // Outras rotas
 }
 
-module.exports = produtoRoutes;
+export default produtoRoutes;
