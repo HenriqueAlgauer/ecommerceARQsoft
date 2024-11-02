@@ -18,5 +18,3 @@ export async function listarProdutos(req, reply) {
         reply.status(500).send(error);
     }
 }
-
-// Outros métodos como atualizarProduto, deletarProduto etc.

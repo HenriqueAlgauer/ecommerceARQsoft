@@ -1,7 +1,8 @@
+import { criarUsuario, listarUsuarios } from '../controllers/usuarioController.js';
+
 async function usuarioRoutes(fastify, options) {
-    fastify.post('/usuarios', fastify.controllers.usuario.criarUsuario);
-    fastify.get('/usuarios', fastify.controllers.usuario.listarUsuarios);
-    // Outras rotas: GET /usuarios/:id, PUT /usuarios/:id, DELETE /usuarios/:id
+    fastify.post('/usuarios', criarUsuario);
+    fastify.get('/usuarios', listarUsuarios);
 }
 
 export default usuarioRoutes;

@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "This is a college subject for software architecture. The proposal is to make a prototype of an ecommerce with the MVC architecture",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

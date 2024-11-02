@@ -1,6 +1,8 @@
+import { listarFinanceiro, cadastrarDebito } from '../controllers/financeiroController.js';
+
 async function financeiroRoutes(fastify, options) {
-    fastify.get('/financeiro', fastify.controllers.financeiro.listarFinanceiro);
-    fastify.post('/financeiro/debito', fastify.controllers.financeiro.cadastrarDebito);
+    fastify.get('/financeiro', listarFinanceiro);
+    fastify.post('/financeiro/debito', cadastrarDebito);
 }
 
 export default financeiroRoutes;
