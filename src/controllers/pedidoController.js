@@ -1,7 +1,6 @@
 export async function criarPedido(req, reply) {
     const { idCliente, itens } = req.body;
     try {
-        // Calcula o valor total do pedido
         let valorTotal = 0;
         for (const item of itens) {
             const produto = await req.server.prisma.produto.findUnique({
@@ -13,7 +12,6 @@ export async function criarPedido(req, reply) {
             valorTotal += produto.valor * item.quantidade;
         }
 
-        // Cria o pedido e os itens
         const pedido = await req.server.prisma.pedido.create({
             data: {
                 idCliente,
@@ -30,7 +28,7 @@ export async function criarPedido(req, reply) {
             },
         });
 
-        // Atualiza o estoque dos produtos
+        
         for (const item of itens) {
             await req.server.prisma.produto.update({
                 where: { id: item.idProduto },
@@ -40,7 +38,7 @@ export async function criarPedido(req, reply) {
             });
         }
 
-        // Registra no financeiro
+        
         await req.server.prisma.financeiro.create({
             data: {
                 idPedido: pedido.id,
@@ -55,4 +53,4 @@ export async function criarPedido(req, reply) {
     }
 }
 
-// Outros métodos como listarPedidos, obterPedidoPorId etc.
+
